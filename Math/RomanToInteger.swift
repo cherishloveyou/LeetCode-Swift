@@ -7,35 +7,19 @@
 
 class RomanToInteger {
     func romanToInt(s: String) -> Int {
-        let dict = initDict()
-        let chars = [Character](s.characters.reverse())
+       let roman = ["M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1]
         var res = 0
-        
-        for i in 0..<chars.count {
-            guard let current = dict[String(chars[i])] else {
-                return res
+        var pre = 0
+        for c in s {
+            guard let value = roman[String(c)] else {
+                return 0
             }
-            if i > 0 && current < dict[String(chars[i - 1])] {
-                res -= current
-            } else {
-                res += current
+            res += value
+            if value > pre {
+                res -= 2 * pre
             }
+            pre = value
         }
-        
         return res
-    }
-    
-    private func initDict() -> [String: Int] {
-        var dict = [String: Int]()
-        
-        dict["I"] = 1
-        dict["V"] = 5
-        dict["X"] = 10
-        dict["L"] = 50
-        dict["C"] = 100
-        dict["D"] = 500
-        dict["M"] = 1000
-        
-        return dict
     }
 }
