@@ -754,14 +754,14 @@
 |	[Swift](./String/ReverseWordsString.swift)	|	151	|	[Reverse Words in a String](https://oj.leetcode.com/problems/reverse-words-in-a-string/)	| Medium	|
 |	[Swift](./Stack/EvaluateReversePolishNotation.swift)	|	150	|	[Evaluate Reverse Polish Notation](https://oj.leetcode.com/problems/evaluate-reverse-polish-notation/)	| Medium	|
 |		|	149	|	[Max Points on a Line](https://oj.leetcode.com/problems/max-points-on-a-line/)	| Hard	|
-|		|	148	|	[Sort List](https://oj.leetcode.com/problems/sort-list/)	| Medium	|
-|		|	147	|	[Insertion Sort List](https://oj.leetcode.com/problems/insertion-sort-list/)	| Medium	|
+|	[Swift](./LinkedList/SortList.swift)	|	148	|	[Sort List](https://oj.leetcode.com/problems/sort-list/)	| Medium	|
+|	[Swift](./LinkedList/InsertionSortList.swift)	|	147	|	[Insertion Sort List](https://oj.leetcode.com/problems/insertion-sort-list/)	| Medium	|
 |	[Swift](./LinkedList/LRUCache.swift)	|	146	|	[LRU Cache](https://oj.leetcode.com/problems/lru-cache/)	| Hard	|
 |	[Swift](./Stack/PostorderTraversal.swift)	|	145	|	[Binary Tree Postorder Traversal](https://oj.leetcode.com/problems/binary-tree-postorder-traversal/)	| Hard	|
 |	[Swift](./Stack/PreorderTraversal.swift)	|	144	|	[Binary Tree Preorder Traversal](https://oj.leetcode.com/problems/binary-tree-preorder-traversal/)	| Medium	|
 |	[Swift](./LinkedList/ReorderList.swift)	|	143	|	[Reorder List](https://oj.leetcode.com/problems/reorder-list/)	| Medium	|
-|		|	142	|	[Linked List Cycle II](https://oj.leetcode.com/problems/linked-list-cycle-ii/)	| Medium	|
-|		|	141	|	[Linked List Cycle](https://oj.leetcode.com/problems/linked-list-cycle/)	| Easy	|
+|	[Swift](./LinkedList/LinkedListCycleII.swift)	|	142	|	[Linked List Cycle II](https://oj.leetcode.com/problems/linked-list-cycle-ii/)	| Medium	|
+|	[Swift](./LinkedList/LinkedListCycle.swift)	|	141	|	[Linked List Cycle](https://oj.leetcode.com/problems/linked-list-cycle/)	| Easy	|
 |		|	140	|	[Word Break II](https://oj.leetcode.com/problems/word-break-ii/)	| Hard	|
 |		|	139	|	[Word Break](https://oj.leetcode.com/problems/word-break/)	| Medium	|
 |		|	138	|	[Copy List with Random Pointer](https://oj.leetcode.com/problems/copy-list-with-random-pointer/)	| Hard	|
@@ -809,8 +809,8 @@
 |	[Swift](./Tree/UniqueBinarySearchTrees.swift)	|	96	|	[Unique Binary Search Trees](https://oj.leetcode.com/problems/unique-binary-search-trees/)	| Medium	|
 |		|	95	|	[Unique Binary Search Trees II](https://oj.leetcode.com/problems/unique-binary-search-trees-ii/)	| Medium	|
 |	[Swift](./Stack/InorderTraversal.swift)	|	94	|	[Binary Tree Inorder Traversal](https://oj.leetcode.com/problems/binary-tree-inorder-traversal/)	| Medium	|
-|		|	93	|	[Restore IP Addresses](https://oj.leetcode.com/problems/restore-ip-addresses/)	| Medium	|
-|		|	92	|	[Reverse Linked List II](https://oj.leetcode.com/problems/reverse-linked-list-ii/)	| Medium	|
+|	[Swift](./String/RestoreIPAddresses.swift)	|	93	|	[Restore IP Addresses](https://oj.leetcode.com/problems/restore-ip-addresses/)	| Medium	|
+|	[Swift](./LinkedList/ReverseLinkedListII.swift)	|	92	|	[Reverse Linked List II](https://oj.leetcode.com/problems/reverse-linked-list-ii/)	| Medium	|
 |	[Swift](./DP/DecodeWays.swift)	|	91	|	[Decode Ways](https://oj.leetcode.com/problems/decode-ways/)	| Medium	|
 |	[Swift](./DFS/SubsetsII.swift)	|	90	|	[Subsets II](https://oj.leetcode.com/problems/subsets-ii/)	| Medium	|
 |	[Swift](./Math/GaryCode.swift)	|	89	|	[Gray Code](https://oj.leetcode.com/problems/gray-code/)	| Medium	|
@@ -877,7 +877,7 @@
 |	[Swift](./String/StrStr.swift)	|	28	|	[Implement strStr()](https://oj.leetcode.com/problems/implement-strstr/)	| Easy	|
 |	[Swfit](./Array/RemoveElement.swift)	|	27	|	[Remove Element](https://oj.leetcode.com/problems/remove-element/)	| Easy	|
 |	[Swift](./Array/RemoveDuplicatesFromSortedArray.swift)	|	26	|	[Remove Duplicates from Sorted Array](https://oj.leetcode.com/problems/remove-duplicates-from-sorted-array/)	| Easy	|
-|		|	25	|	[Reverse Nodes in k-Group](https://oj.leetcode.com/problems/reverse-nodes-in-k-group/)	| Hard	|
+|	[Swift](./LinkedList/ReverseNodesInKGroup.swift)	|	25	|	[Reverse Nodes in k-Group](https://oj.leetcode.com/problems/reverse-nodes-in-k-group/)	| Hard	|
 |	[Swift](./LinkedList/SwapNodesInPairs.swift)	|	24	|	[Swap Nodes in Pairs](https://oj.leetcode.com/problems/swap-nodes-in-pairs/)	| Easy	|
 |	[Swift](./LinkedList/MergeKSortedLists.swift)	|	23	|	[Merge k Sorted Lists](https://oj.leetcode.com/problems/merge-k-sorted-lists/)	| Hard	|
 |	[Swift](./Math/GenerateParentheses.swift)	|	22	|	[Generate Parentheses](https://oj.leetcode.com/problems/generate-parentheses/)	| Medium	|

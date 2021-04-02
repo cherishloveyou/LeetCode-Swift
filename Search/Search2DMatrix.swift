@@ -49,3 +49,30 @@ class Search2DMatrix {
         return false
     }
 }
+
+class Solution {
+    func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
+        var m = matrix.count
+        if (m == 0)  {
+           return false
+        }
+        var n = matrix[0].count
+
+        var left = 0, right = m * n - 1;
+        var pivotIdx = 0, pivotElement = 0;
+        while (left <= right) {
+            pivotIdx = (left + right) / 2;
+            pivotElement = matrix[pivotIdx / n][pivotIdx % n]
+            if (target == pivotElement) {
+                return true
+            }  else {
+                if (target < pivotElement) {
+                    right = pivotIdx - 1
+                } else {
+                    left = pivotIdx + 1
+                }
+            }
+        }
+        return false
+    }
+}

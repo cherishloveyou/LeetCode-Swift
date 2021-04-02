@@ -5,30 +5,19 @@
  */
 
 class LengthLastWord {
-    func lengthOfLastWord(s: String) -> Int {
+    func lengthOfLastWord(_ s: String) -> Int {
         var res = 0
-        var sChars = [Character](s.characters)
-        
-        guard sChars.count != 0 else {
-            return 0
-        }
-        
-        for i in (0...sChars.count - 1).reverse() {
-            if res == 0 {
-                if sChars[i] == " " {
-                    continue
-                } else {
-                    res += 1
-                }
+
+        for i in s.reversed() {
+            if res == 0 && i == " " {
+                continue
+            }
+            if i != " " {
+                res += 1
             } else {
-                if sChars[i] == " " {
-                    break
-                } else {
-                    res += 1
-                }
+                return res
             }
         }
-        
         return res
     }
 }

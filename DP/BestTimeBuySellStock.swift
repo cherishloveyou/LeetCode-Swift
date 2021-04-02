@@ -23,3 +23,22 @@ class BestTimeBuySellStock {
         return maxProfit
     }
 }
+
+class Solution {
+    func maxProfit(_ prices: [Int]) -> Int {
+        
+        guard prices.count > 0 else {return 0}
+
+        var minPrice: Int = prices[0]
+        var maxProfit: Int = 0
+        
+        for i in 1 ..< prices.count {
+            if prices[i] < minPrice {
+                minPrice = prices[i]
+            }else { // i天卖出获得的最大利润
+                maxProfit = max(maxProfit, prices[i] - minPrice)
+            }
+        }
+        return maxProfit
+    }
+}

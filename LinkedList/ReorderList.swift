@@ -70,3 +70,42 @@ class ReorderList {
         }
     }
 }
+
+class Solution {
+    func reorderList(_ head: ListNode?) -> ListNode? {
+        guard let head = head else { return nil }
+        var slow: ListNode? = head
+        var fast: ListNode? = head
+        while fast?.next?.next != nil {
+            fast = fast?.next?.next
+            slow = slow?.next
+        }
+        let next = reverseList(slow?.next)
+        slow?.next = nil
+        slow = head
+        fast = next
+        var curr: ListNode? = nil
+        while slow != nil {
+            curr?.next = slow
+            curr = fast
+            let tmp = slow?.next
+            slow?.next = fast
+            slow = tmp
+            fast = fast?.next
+        }
+        return head
+    }
+
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        guard let head = head else { return nil }
+        var curr: ListNode? = head
+        var prev: ListNode? = nil
+        while curr != nil {
+            let tmp = curr?.next
+            curr?.next = prev
+            prev = curr
+            curr = tmp
+        }
+        return prev
+    }
+}

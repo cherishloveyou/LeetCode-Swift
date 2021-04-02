@@ -47,3 +47,22 @@ class BinaryTreeRightSideView {
         return res
     }
 }
+
+class Solution {
+    func rightSideView(_ root: TreeNode?) -> [Int] {
+        var res = [Int]()
+        dfs(root, &res, 0)
+        return res
+    }
+
+    func dfs(_ node: TreeNode?, _ res: inout [Int], _ depth: Int) {
+        guard let node = node else {
+            return
+        }
+        if (res.count == depth ) {  
+             res.append(node.val)
+        }
+        dfs(node.right, &res, depth + 1)
+        dfs(node.left, &res, depth + 1)
+    }
+}

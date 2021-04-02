@@ -46,3 +46,33 @@ class SearchForARange {
         return nums[right] == target ? right : nums[left] == target ? left : -1
     }
 }
+
+Class Solution {
+    func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
+        let start = binarySearch(nums, target)
+
+        if start == nums.count || nums[start] != target {
+            return [-1, -1]
+        }
+
+        let end = binarySearch(nums, target + 1) - 1
+
+        return [start, end]
+    }
+
+    private func binarySearch(_ nums: [Int], _ target: Int) -> Int {
+        var left = 0
+        var right = nums.count
+
+        while left < right {
+            let middle = left + (right - left) / 2
+            if nums[middle] < target {
+                left = middle + 1
+            } else {
+                right = middle
+            }
+        }
+
+        return left
+    }
+}

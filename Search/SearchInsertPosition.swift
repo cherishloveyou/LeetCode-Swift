@@ -7,32 +7,18 @@
 
 class SearchInsertPosition {
     func searchInsert(nums: [Int], _ target: Int) -> Int {
-        guard nums.count > 0 else {
-            return 0
-        }
-        
         var left = 0
         var right = nums.count - 1
-        var mid = 0
-        
-        while left + 1 < right {
-            mid = (right - left) / 2 + left
-            if nums[mid] == target {
-                return mid
-            } else if nums[mid] < target {
-                left = mid
-            } else {
-                right = mid
+        while left <= right {
+            let middle:Int = (left + right )/2
+            if target == nums[middle] {
+                return middle
+            } else if target > nums[middle]{
+                left = middle + 1
+            } else if target < nums[middle] {
+                right  = middle - 1
             }
         }
-        
-        if nums[right] < target {
-            return right + 1
-        }
-        if nums[left] >= target {
-            return left
-        }
-        
-        return right
+        return left
     }
 }

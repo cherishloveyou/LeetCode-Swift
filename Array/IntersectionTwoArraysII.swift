@@ -23,3 +23,26 @@
         return res
     }
 }
+class Solution {
+    func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        if nums1.count > nums2.count {
+            return intersect(nums2, nums1)
+        }
+        var dict = [Int: Int]()
+        var res = [Int]()
+        for a in nums1 {
+            if let num = dict[a] {
+                 dict[a] = num + 1
+            } else {
+                dict[a] = 1
+            }
+        }
+        for b in nums2 {
+            if let count = dict[b], count > 0 {
+                res.append(b)
+                dict[b] = count - 1
+            }
+        }
+        return res
+    }
+}

@@ -35,3 +35,19 @@ class PostorderTraversal {
         return res
     }
 }
+
+class Solution {
+    func postorderTraversal(_ root: TreeNode?) -> [Int] {
+        var res = [Int]()
+        guard let root = root else {return res}
+        dfs(root, &res)
+        return res
+    }
+
+    func dfs(_ node: TreeNode?, _ res: inout [Int]) {
+        guard let node = node else {return}
+        dfs(node.left, &res)
+        dfs(node.right, &res)
+        res.append(node.val)
+    }
+}

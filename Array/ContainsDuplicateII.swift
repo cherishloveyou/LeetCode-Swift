@@ -25,3 +25,17 @@ class ContainsDuplicateII {
         return false
     }
 }
+
+class Solution {
+    func containsNearbyDuplicate(_ nums: [Int], _ k: Int) -> Bool {
+        var container = Set<Int>()
+        for i in 0..<nums.count {
+            if container.contains(nums[i]) { return true }
+            container.update(with: nums[i])
+            if container.count > k {
+                container.remove(nums[i - k])
+            }
+        }
+        return false 
+    }
+}

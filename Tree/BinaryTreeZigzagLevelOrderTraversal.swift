@@ -40,3 +40,38 @@ class BinaryTreeZigzagLevelOrderTraversal {
         return res
     }
 }
+class Solution {
+    func zigzagLevelOrder(_ root: TreeNode?) -> [[Int]] {
+        guard let root = root else {
+            return []
+        }
+
+        var result = [[Int]]()
+        var order = true
+        var queue = [TreeNode]()
+
+        queue.append(root)
+
+        while !queue.isEmpty {
+            var levelNodes = [Int]()
+            let count = queue.count
+            for _ in 0..<count {
+                let node = queue.removeFirst()
+                if order {
+                    levelNodes.append(node.val)
+                } else {
+                    levelNodes.insert(node.val, at: 0)
+                }
+                if let leftNode = node.left {
+                    queue.append(leftNode)
+                }
+                if let rightNode = node.right {
+                    queue.append(rightNode)
+                }
+            }
+            result.append(levelNodes)
+            order = !order
+        }
+        return result
+    }
+}

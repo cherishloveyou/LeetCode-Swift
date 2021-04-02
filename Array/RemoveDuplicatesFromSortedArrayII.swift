@@ -24,3 +24,19 @@ class RemoveDuplicatesFromSortedArrayII {
         return index + 1
     }
 }
+class Solution {
+	func removeDuplicates(_ nums: inout [Int]) -> Int {
+		let n = 2 //重复的元素最多出现n次
+		if nums.count <= n {
+			return nums.count
+		}
+		var index = n
+		for i in n..<nums.count {
+			if nums[index-n] != nums[i] {
+				nums[index] = nums[i]
+				index += 1
+			}
+		}
+		return index
+	}
+}

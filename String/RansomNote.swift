@@ -23,7 +23,7 @@ class RansomNote {
         return true
     }
     
-    private func _strToMap(magazine: String) -> [Character: Int] {
+    private func _strToMap(_ magazine: String) -> [Character: Int] {
         var res = [Character: Int]()
         
         for char in magazine.characters {
@@ -35,5 +35,19 @@ class RansomNote {
         }
         
         return res
+    }
+}
+
+class Solution {
+    func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
+        var temp = magazine
+        for i in ransomNote {
+            if let index = temp.firstIndex(of: i) {
+                temp.remove(at: index)
+            } else {
+                return false
+            }
+        }
+        return true
     }
 }

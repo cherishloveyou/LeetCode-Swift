@@ -50,3 +50,34 @@ class LetterCombinationsPhoneNumber {
         return numberToStr[currentDigit]
     }
 }
+
+class Solution {
+    func letterCombinations(_ digits: String) -> [String] {
+       guard digits.count > 0 else {
+            return [String]()
+        }
+        let dict: [Character: String] = ["2":"abc", "3":"def", "4":"ghi", "5":"jkl", "6":"mno", "7":"pqrs", "8":"tuv", "9":"wxyz"];
+        var array = [String]()
+        for s in digits {
+            if let str = dict[s] {
+                array.append(str)
+            }
+        }
+        var res = [String]()
+        dfs(&res, array, "", 0)
+        return res
+    }
+
+    func dfs(_ res: inout [String], _ array: [String], _ str: String,  _ index: Int) {
+        if index == array.count {
+            res.append(str)
+            return
+        }
+        let string = array[index]
+        for s in string {
+            var str = str
+            str.append(s)
+            dfs(&res, array, str, index+1)
+        }
+    } 
+}

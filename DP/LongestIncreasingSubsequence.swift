@@ -37,3 +37,20 @@ class LongestIncreasingSubsequence {
         return ends.count
     }
 }
+
+class Solution {
+    func lengthOfLIS(_ nums: [Int]) -> Int {
+        guard nums.count > 0 else { return 0}
+        var dp = Array(repeating: 1, count: nums.count)
+        var res = 1
+        for i in 1..<nums.count {
+            for j in 0..<i {
+                if (nums[i] > nums[j]) {
+                    dp[i] = max(dp[i], dp[j] + 1)
+                }
+            }
+            res = max(res, dp[i])
+        }
+        return res
+    }
+}

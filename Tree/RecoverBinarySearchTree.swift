@@ -90,3 +90,68 @@ class RecoverBinarySearchTree {
         }
     }
 }
+
+class Solution {
+    
+    var pre: TreeNode?
+    var first: TreeNode?
+    var second: TreeNode?
+
+    func recoverTree(_ root: TreeNode?) {
+        inorder(root)
+        let v = first!.val
+        first!.val = second!.val
+        second!.val = v 
+    }
+    func inorder(_ root: TreeNode?) {
+        if root == nil { return }
+        inorder(root?.left)
+        findNode(root!)
+        inorder(root?.right)
+    }
+    func findNode(_ node: TreeNode) {
+        if pre != nil && node.val < pre!.val {
+            second = node
+            if first == nil {
+                first = pre
+            } else {
+                return 
+            }
+        }
+        pre = node
+    }
+}
+
+class Solution {
+    // 记录上一个遍历的节点
+    var prev: TreeNode?
+    // 第一个逆序对较大的那个节点（左边）
+    var first: TreeNode?
+    // 第二个逆序对较小的那个节点（右边）
+    var second: TreeNode?
+    
+    func recoverTree(_ root: TreeNode?) {
+        findWrongNodes(root)
+        // 交换两个错误节点的值
+        guard let firstVal = first?.val, let secondVal = second?.val else { return }
+        first?.val = secondVal
+        second?.val = firstVal
+    }
+    
+    // 查找错误节点 用中序遍历
+    func findWrongNodes(_ root: TreeNode?) {
+        if root == nil { return }
+        
+        findWrongNodes(root?.left)
+        // 出现了逆序对
+        if prev != nil && prev!.val > root!.val {
+            // 第二个错误节点 当有两次时可以覆盖
+            second = root
+            // 第一个错误节点
+            if first != nil { return } // 当first不为空时，此时已经找到第二个逆序对，后面的遍历可以不需要了
+            first = prev
+        }
+        prev = root
+        findWrongNodes(root?.right)
+    }
+}

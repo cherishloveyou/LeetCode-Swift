@@ -7,32 +7,34 @@
 
 class UglyNumberII {
     func nthUglyNumber(n: Int) -> Int {
-        guard n > 1 else {
-            return 1
+        guard n > 0 else {
+            return 0
         }
-        
-        var uglyNums = [Int](count: n, repeatedValue: 1)
-        
-        var index2 = 0
-        var index3 = 0
-        var index5 = 0
-        
-        for i in 1..<n {
-            var minVal = min(uglyNums[index2] * 2, uglyNums[index3] * 3, uglyNums[index5] * 5)
-            
-            if minVal == uglyNums[index2] * 2 {
-                index2 += 1
-            } 
-            if minVal == uglyNums[index3] * 3 {
-                index3 += 1
-            } 
-            if minVal == uglyNums[index5] * 5{
-                index5 += 1
+
+        var dp = [Int](repeating: 0, count: n + 1)
+        dp[0] = 1
+
+        var v2 = 0
+        var v3 = 0
+        var v5 = 0
+
+        for i in 1...n {
+
+            dp[i] = min(2 * dp[v2], 3 * dp[v3], 5 * dp[v5])
+
+            if dp[i] >= 2 * dp[v2] {
+                v2 += 1
             }
-            
-            uglyNums[i] = minVal
+
+            if dp[i] >= 3 * dp[v3] {
+                v3 += 1
+            }
+
+            if dp[i] >= 5 * dp[v5] {
+                v5 += 1
+            }
         }
-        
-        return uglyNums[n - 1]
+
+        return dp[n - 1]
     }
 }

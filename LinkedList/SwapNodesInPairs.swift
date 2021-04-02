@@ -37,3 +37,15 @@ class SwapNodesInPairs {
         return dummy.next
     }
 }
+
+class Solution {
+    func swapPairs(_ head: ListNode?) -> ListNode? {
+        if head == nil || head?.next == nil {
+            return head
+        }
+        let temp = head?.next
+        head?.next = swapPairs(temp?.next)
+        temp?.next = head
+        return temp
+    }
+}

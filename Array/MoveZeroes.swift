@@ -21,3 +21,21 @@ class MoveZeroes {
         }
     }
 }
+
+class Solution {
+    func moveZeroes(_ nums: inout [Int]) {
+       if(nums.isEmpty) {
+			return
+       }
+		var j = 0
+		for i in 0..<nums.count {
+			if nums[i] != 0 {
+                if (i > j) {
+                 nums[j] = nums[i]
+                 nums[i] = 0
+                }
+                j = j + 1
+			}
+		}
+    }
+}

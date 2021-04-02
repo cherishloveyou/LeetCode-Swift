@@ -6,9 +6,9 @@
 
 class StrStr {
     func strStr(_ haystack: String, _ needle: String) -> Int {
-        let hChars = Array(haystack.characters), nChars = Array(needle.characters)
+        let hChars = Array(haystack), nChars = Array(needle)
         let hLen = hChars.count, nLen = nChars.count
-    
+
         guard hLen >= nLen else {
             return -1
         }
@@ -18,7 +18,7 @@ class StrStr {
         
         for i in 0...hLen - nLen {
             if hChars[i] == nChars[0] {
-                for j in 0..<nLen {
+                for j in 0..< nLen {
                     if hChars[i + j] != nChars[j] {
                         break
                     }
@@ -26,9 +26,8 @@ class StrStr {
                         return i
                     }
                 }
-            } 
+            }
         }
-        
         return -1
     }
 }

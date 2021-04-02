@@ -31,3 +31,22 @@ class LongestConsecutiveSequence {
         dfs(num - 1, &set, &longest, &length)
     }
 }
+
+class Solution {
+    func longestConsecutive(_ nums: [Int]) -> Int {
+        let hashMap = Set(nums)
+        var result = 0
+        for item in hashMap {
+            if !hashMap.contains(item-1) {
+                var currentNum = item
+                var temp = 1
+                while hashMap.contains(currentNum+1) {
+                    temp += 1
+                    currentNum += 1
+                }
+                result = max(result, temp)
+            }
+        }
+        return result
+    }
+}

@@ -23,7 +23,7 @@
             return head
         }
         
-        let dummy = ListNode(0)
+        let dummy = ListNode(-1)
         dummy.next = head
         var node = dummy
         
@@ -39,5 +39,31 @@
         }
         
         return dummy.next
+    }
+}
+
+class Solution {
+    func deleteDuplicates(_ head: ListNode?) -> ListNode? {
+        if head == nil {
+            return nil
+        }
+        let dummyNode = ListNode(-1)
+        dummyNode.next = head
+        
+        var slow: ListNode? = dummyNode
+        var fast: ListNode? = head
+        while fast != nil {
+            while fast?.next != nil, fast?.val == fast?.next?.val {
+                fast = fast?.next
+            }
+            if slow?.next !== fast {
+                slow?.next = fast?.next
+                fast = slow?.next
+            } else {
+                slow = fast
+                fast = fast?.next
+            }
+        }
+        return dummyNode.next
     }
 }

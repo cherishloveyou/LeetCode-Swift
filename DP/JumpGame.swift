@@ -17,9 +17,29 @@ class JumpGame {
             
             maximumIndex = max(maximumIndex, currentIndex + value)
         }
-        
+         
         return true
     }
 }
 
+//超时
+class Solution {
+    func canJump(_ nums: [Int]) -> Bool {
+        guard nums.count > 1 else {
+            return true
+        }
+        var dp = Array(repeating: false, count: nums.count)
+        
+        dp[0] = true
+        for i in 1..<nums.count {
+            for j in 0..<i {
+                if (dp[j] && j + nums[j] >= i) {
+                    dp[i] = true
+                    break
+                }
+            }
+        }
+        return dp[nums.count - 1]
+    }
+}
 

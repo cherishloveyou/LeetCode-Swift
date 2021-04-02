@@ -39,3 +39,23 @@ class BinaryTreeLevelOrderTraversal {
         return res
     }
 }
+
+class Solution {
+    func levelOrder(_ root: TreeNode?) -> [[Int]] {
+        var res = [[Int]]()
+  
+        dfs(root, &res, 0)
+        return res
+    }
+
+    func dfs(_ root: TreeNode?,_ res: inout [[Int]],_ level: Int) {
+        guard let r = root else { return }
+        if level < res.count {
+            res[level].append(r.val)
+        } else {
+            res.append([r.val])
+        }
+        dfs(r.left, &res, level+1)
+        dfs(r.right, &res, level+1)
+    }
+}

@@ -16,20 +16,15 @@
 
 class RemoveDuplicatesFromSortedList {
     func deleteDuplicates(_ head: ListNode?) -> ListNode? {
-        guard let head = head else {
-            return nil
-        }
-    
-        var curt = head
-        
-        while curt.next != nil {
-            if curt.next!.val == curt.val {
-                curt.next = curt.next!.next
+        var curt:ListNode? = head
+
+        while curt != nil && curt?.next != nil {
+            if curt?.val == curt?.next?.val {
+                curt?.next = curt?.next?.next
             } else {
-                curt = curt.next!
+                curt = curt?.next
             }
         }
-        
         return head
     }
 }

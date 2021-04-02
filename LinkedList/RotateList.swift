@@ -42,7 +42,7 @@ class RotateList {
         return post
     }
     
-    private func _getLength(head: ListNode?) -> Int {
+    private func _getLength(_ head: ListNode?) -> Int {
         var len = 0
         var node = head
         
@@ -52,5 +52,31 @@ class RotateList {
         }
         
         return len
+    }
+}
+
+class Solution {
+   func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
+        if head == nil || head!.next == nil || k == 0 {
+            return head
+        }
+        var old = head
+        var sum = 1
+        print(getLength(head))
+        while (old?.next != nil) {
+            sum += 1
+            old = old?.next 
+        }
+        old?.next = head
+
+        var tail = head
+        for _ in 0..<(sum - k%sum - 1) {
+            tail = tail?.next
+        }
+    
+        var new = tail?.next
+        tail?.next = nil
+
+        return new
     }
 }
