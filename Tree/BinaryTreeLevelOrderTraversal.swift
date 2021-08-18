@@ -59,3 +59,26 @@ class Solution {
         dfs(r.right, &res, level+1)
     }
 }
+
+class Solution {
+    func levelOrder(_ root: TreeNode?) -> [[Int]] {
+        guard let root = root else {return []}
+        var queue: [TreeNode] = [root]
+        var result: [[Int]] = []
+        while !queue.isEmpty {
+            var path: [Int] = []
+            for i in 0..<queue.count {
+                let head = queue.removeFirst()
+                path.append(head.val)
+                if let leftNode = head.left {
+                    queue.append(leftNode)
+                }
+                if let rightNode = head.right {
+                    queue.append(rightNode)
+                }
+            }
+            result.append(path)
+        }
+        return result
+    }
+}

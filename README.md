@@ -658,7 +658,7 @@
 |	[Swift](./Math/UglyNumberII.swift)	|	264	|	[Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)	|	Medium	|
 |	[Swift](./Math/UglyNumber.swift)	|	263	|	[Ugly Number](https://leetcode.com/problems/ugly-number/)	| Easy	|
 |	[Swift](./Sort/GraphValidTree.swift)	|	261	|	[Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/) &hearts;	|	Medium	|
-|		|	260	|	[Single Number III](https://leetcode.com/problems/single-number-iii/)	|	Medium	|
+|	[Swift](./Math/SingleNumberIII.swift)	|	260	|	[Single Number III](https://leetcode.com/problems/single-number-iii/)	|	Medium	|
 |		|	259	|	[3Sum Smaller](https://leetcode.com/problems/3sum-smaller/) &hearts;	|	Medium	|
 |	[Swift](./Math/AddDigits.swift)	|	258	|	[Add Digits](https://leetcode.com/problems/add-digits/)	| Easy	|
 |	[Swift](./Tree/BnaryTreePaths.swift)	|	257	|	[Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)	| Easy	|
@@ -807,7 +807,7 @@
 |	[Swift](./Tree/ValidateBinarySearchTree.swift)	|	98	|	[Validate Binary Search Tree](https://oj.leetcode.com/problems/validate-binary-search-tree/)	| Medium	|
 |		|	97	|	[Interleaving String](https://oj.leetcode.com/problems/interleaving-string/)	| Hard	|
 |	[Swift](./Tree/UniqueBinarySearchTrees.swift)	|	96	|	[Unique Binary Search Trees](https://oj.leetcode.com/problems/unique-binary-search-trees/)	| Medium	|
-|		|	95	|	[Unique Binary Search Trees II](https://oj.leetcode.com/problems/unique-binary-search-trees-ii/)	| Medium	|
+|	[Swift](./Tree/UniqueBinarySearchTreesII.swift)		|	95	|	[Unique Binary Search Trees II](https://oj.leetcode.com/problems/unique-binary-search-trees-ii/)	| Medium	|
 |	[Swift](./Stack/InorderTraversal.swift)	|	94	|	[Binary Tree Inorder Traversal](https://oj.leetcode.com/problems/binary-tree-inorder-traversal/)	| Medium	|
 |	[Swift](./String/RestoreIPAddresses.swift)	|	93	|	[Restore IP Addresses](https://oj.leetcode.com/problems/restore-ip-addresses/)	| Medium	|
 |	[Swift](./LinkedList/ReverseLinkedListII.swift)	|	92	|	[Reverse Linked List II](https://oj.leetcode.com/problems/reverse-linked-list-ii/)	| Medium	|
@@ -857,7 +857,7 @@
 |	[Swift](./Array/RotateImage.swift)	|	48	|	[Rotate Image](https://oj.leetcode.com/problems/rotate-image/)	| Medium	|
 |	[Swift](./DFS/PermutationsII.swift)	|	47	|	[Permutations II](https://oj.leetcode.com/problems/permutations-ii/)	| Medium	|
 |	[Swift](./DFS/Permutations.swift)	|	46	|	[Permutations](https://oj.leetcode.com/problems/permutations/)	| Medium	|
-|		|	45	|	[Jump Game II](https://oj.leetcode.com/problems/jump-game-ii/)	| Hard	|
+|	[Swift](./DP/JumpGameII.swift) 	|	45	|	[Jump Game II](https://oj.leetcode.com/problems/jump-game-ii/)	| Hard	|
 |	[Swift](./DP/WildcardMatching.swift)	|	44	|	[Wildcard Matching](https://oj.leetcode.com/problems/wildcard-matching/)	| Hard	|
 |	[Swift](./String/MultiplyStrings.swift)	|	43	|	[Multiply Strings](https://oj.leetcode.com/problems/multiply-strings/)	| Medium	|
 |	[Swift](./Math/TrappingRainWater.swift)	|	42	|	[Trapping Rain Water](https://oj.leetcode.com/problems/trapping-rain-water/)	| Hard	|
